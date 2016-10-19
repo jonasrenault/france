@@ -16,6 +16,7 @@
       "mobile": false,
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.css",
+        "../node_modules/leaflet/dist/leaflet.css",
         "styles.css"
       ],
       "scripts": [
