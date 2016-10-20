@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import * as Leaflet from 'leaflet';
 import { MapService } from '../map.service';
 
 @Component({
