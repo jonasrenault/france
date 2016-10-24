@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as geojsonvt from 'geojson-vt';
 import * as topojson from 'topojson';
+import * as d3 from './bundle-d3';
 declare var L: any;
 import { DataService } from './data.service';
 
@@ -37,19 +38,19 @@ export class MapService {
   }
 
   private getTopo(): void {
-    this.dataService.getData('assets/communes.json').then(response => {
+    this.dataService.getData('assets/communes.geo.json').then(response => {
       let geoJSON = response.json();
+      let colors = ["#fed976", "#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026"];
+      // let colors = ["#ffffb2", "#fed976", "#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#b10026"];
+      // let colors = ["#f2f0f7", "#dadaeb", "#bcbddc", "#9e9ac8", "#807dba", "#6a51a3", "#4a1486"];
+      var color = d3.scaleThreshold().domain([0.02, 0.04, 0.06, 0.08, 0.10, 0.15]).range(d3.range(7));
 
       var vectorGrid = L.vectorGrid.slicer(geoJSON, {
 			rendererFactory: L.canvas.tile,
 			vectorTileLayerStyles: {
 				sliced: function(properties, zoom) {
-					var p = properties.insee % 5;
 					return {
-						fillColor: p === 0 ? '#800026' :
-								p === 1 ? '#E31A1C' :
-								p === 2 ? '#FEB24C' :
-								p === 3 ? '#B2FE4C' : '#FFEDA0',
+						fillColor: colors[color(properties.t)],
 						fillOpacity: 0.7,
 						stroke: true,
 						fill: true,
@@ -61,10 +62,7 @@ export class MapService {
 			}
 		}).addTo(this.map);
 
-      // let topos = topojson.feature( geoJSON, geoJSON.objects['COMMUNE'] );
-      // console.log(topos);
-      // L.geoJSON(topos).addTo(this.map);
-    })
+  });
   }
 
 }
