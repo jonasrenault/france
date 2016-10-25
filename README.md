@@ -27,5 +27,9 @@ Some code was adapted from various examples, including :
 
 * Adding mouse interaction would be nice.
 
+* Reduce the size of the geoJSON file. Maybe using compression, and / or topoJSON conversion.
+
+* Have a server build the vector grid.
+
 # License
 Released under the [The MIT License](https://opensource.org/licenses/MIT).
