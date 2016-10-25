@@ -1,31 +1,31 @@
-# France
+# Angular 2 France Unemployment Map
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.17.
+This is an example application demonstrating Angular2 and Leaflet v1.0 integration. The application displays the unemployment rate for all of the French cities.
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The application uses the [Leaflet.VectorGrid](https://github.com/Leaflet/Leaflet.VectorGrid) plugin to display a large geoJSON file (~36000 polygons / 11MB).
 
-## Code scaffolding
+# Live Demo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class`.
+[Live Demo](https://jonasrenault.github.io/france/)
 
-## Build
+# Data Sources
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+* The geographic mapping comes from the simplified version of [OpenStreetMap's delimiting of french cities](https://www.data.gouv.fr/fr/datasets/decoupage-administratif-communal-francais-issu-d-openstreetmap/) as of January 1st 2015. This mapping was simplified using [MapShaper](http://mapshaper.org/) to reduce the size of the geoJSON file.
 
-## Running unit tests
+* The unemployment rate values come from [INSEE's 2013 census information](http://www.insee.fr/fr/themes/detail.asp?reg_id=99&ref_id=base-cc-resume-stat).
+</p>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Credits
 
-## Running end-to-end tests
+Some code was adapted from various examples, including :
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). 
-Before running the tests make sure you are serving the app via `ng serve`.
+* [Mike Bostock's](https://bl.ocks.org/mbostock) [Threshold Choropleth](https://bl.ocks.org/mbostock/3306362)
+* [Mike Bostock's](https://bl.ocks.org/mbostock) [Threshold Key](https://bl.ocks.org/mbostock/4573883)
+* Leaflet's [Interactive Choropleth Map](http://leafletjs.com/examples/choropleth/) example
 
-## Deploying to Github Pages
+# Improvements
 
-Run `ng github-pages:deploy` to deploy to Github Pages.
+* Adding mouse interaction would be nice.
 
-## Further help
-
-To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# License
+Released under the [The MIT License](https://opensource.org/licenses/MIT).
