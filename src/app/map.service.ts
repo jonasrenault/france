@@ -37,7 +37,7 @@ export class MapService {
 
     private buildMap(): void {
         this.map = L.map(this.htmlElement, this.config);
-        L.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', <L.TileLayerOptions>{ subdomains: "abcd", detectRetina: true, attribution: '<a href="https://www.mapzen.com/rights">Attribution.</a>. Data &copy;<a href="https://openstreetmap.org/copyright">OSM</a> contributors.' }).addTo(this.map);
+        L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', <L.TileLayerOptions>{ subdomains: "abcd", detectRetina: true, attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>'}).addTo(this.map);
     }
 
     private getTopo(): void {
