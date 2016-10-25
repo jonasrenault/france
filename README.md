@@ -29,7 +29,7 @@ Some code was adapted from various examples, including :
 
 * Reduce the size of the geoJSON file. Maybe using compression, and / or topoJSON conversion.
 
-* Have a server build the vector grid.
+* Have a server build the vector tiles, similar to [MapZen's](https://mapzen.com/documentation/vector-tiles/) implementation.
 
 # License
 Released under the [The MIT License](https://opensource.org/licenses/MIT).
